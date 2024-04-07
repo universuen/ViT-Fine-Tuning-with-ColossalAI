@@ -1,0 +1,307 @@
++ pip install -r requirements.txt
+Requirement already satisfied: colossalai>=0.1.12 in ./.conda/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (0.3.6)
+Requirement already satisfied: torch>=1.8.1 in ./.conda/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (1.12.0)
+Requirement already satisfied: numpy>=1.24.1 in ./.conda/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (1.26.4)
+Requirement already satisfied: tqdm>=4.61.2 in ./.conda/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (4.66.2)
+Requirement already satisfied: transformers>=4.20.0 in ./.conda/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.39.3)
+Requirement already satisfied: datasets in ./.conda/lib/python3.9/site-packages (from -r requirements.txt (line 6)) (2.18.0)
+Requirement already satisfied: psutil in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (5.9.8)
+Requirement already satisfied: packaging in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (24.0)
+Requirement already satisfied: pre-commit in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (3.7.0)
+Requirement already satisfied: rich in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (13.7.1)
+Requirement already satisfied: click in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (8.1.7)
+Requirement already satisfied: fabric in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (3.2.2)
+Requirement already satisfied: contexttimer in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (0.3.3)
+Requirement already satisfied: ninja in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (1.11.1.1)
+Requirement already satisfied: safetensors in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (0.4.2)
+Requirement already satisfied: einops in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (0.7.0)
+Requirement already satisfied: pydantic in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (2.6.4)
+Requirement already satisfied: ray in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (2.10.0)
+Requirement already satisfied: sentencepiece in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (0.2.0)
+Requirement already satisfied: google in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (3.0.0)
+Requirement already satisfied: protobuf in ./.conda/lib/python3.9/site-packages (from colossalai>=0.1.12->-r requirements.txt (line 1)) (5.26.1)
+Requirement already satisfied: typing_extensions in ./.conda/lib/python3.9/site-packages (from torch>=1.8.1->-r requirements.txt (line 2)) (4.9.0)
+Requirement already satisfied: filelock in ./.conda/lib/python3.9/site-packages (from transformers>=4.20.0->-r requirements.txt (line 5)) (3.13.3)
+Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in ./.conda/lib/python3.9/site-packages (from transformers>=4.20.0->-r requirements.txt (line 5)) (0.22.2)
+Requirement already satisfied: pyyaml>=5.1 in ./.conda/lib/python3.9/site-packages (from transformers>=4.20.0->-r requirements.txt (line 5)) (6.0.1)
+Requirement already satisfied: regex!=2019.12.17 in ./.conda/lib/python3.9/site-packages (from transformers>=4.20.0->-r requirements.txt (line 5)) (2023.12.25)
+Requirement already satisfied: requests in ./.conda/lib/python3.9/site-packages (from transformers>=4.20.0->-r requirements.txt (line 5)) (2.31.0)
+Requirement already satisfied: tokenizers<0.19,>=0.14 in ./.conda/lib/python3.9/site-packages (from transformers>=4.20.0->-r requirements.txt (line 5)) (0.15.2)
+Requirement already satisfied: pyarrow>=12.0.0 in ./.conda/lib/python3.9/site-packages (from datasets->-r requirements.txt (line 6)) (15.0.2)
+Requirement already satisfied: pyarrow-hotfix in ./.conda/lib/python3.9/site-packages (from datasets->-r requirements.txt (line 6)) (0.6)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in ./.conda/lib/python3.9/site-packages (from datasets->-r requirements.txt (line 6)) (0.3.8)
+Requirement already satisfied: pandas in ./.conda/lib/python3.9/site-packages (from datasets->-r requirements.txt (line 6)) (2.2.1)
+Requirement already satisfied: xxhash in ./.conda/lib/python3.9/site-packages (from datasets->-r requirements.txt (line 6)) (3.4.1)
+Requirement already satisfied: multiprocess in ./.conda/lib/python3.9/site-packages (from datasets->-r requirements.txt (line 6)) (0.70.16)
+Requirement already satisfied: fsspec<=2024.2.0,>=2023.1.0 in ./.conda/lib/python3.9/site-packages (from fsspec[http]<=2024.2.0,>=2023.1.0->datasets->-r requirements.txt (line 6)) (2024.2.0)
+Requirement already satisfied: aiohttp in ./.conda/lib/python3.9/site-packages (from datasets->-r requirements.txt (line 6)) (3.9.3)
+Requirement already satisfied: aiosignal>=1.1.2 in ./.conda/lib/python3.9/site-packages (from aiohttp->datasets->-r requirements.txt (line 6)) (1.3.1)
+Requirement already satisfied: attrs>=17.3.0 in ./.conda/lib/python3.9/site-packages (from aiohttp->datasets->-r requirements.txt (line 6)) (23.2.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./.conda/lib/python3.9/site-packages (from aiohttp->datasets->-r requirements.txt (line 6)) (1.4.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./.conda/lib/python3.9/site-packages (from aiohttp->datasets->-r requirements.txt (line 6)) (6.0.5)
+Requirement already satisfied: yarl<2.0,>=1.0 in ./.conda/lib/python3.9/site-packages (from aiohttp->datasets->-r requirements.txt (line 6)) (1.9.4)
+Requirement already satisfied: async-timeout<5.0,>=4.0 in ./.conda/lib/python3.9/site-packages (from aiohttp->datasets->-r requirements.txt (line 6)) (4.0.3)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./.conda/lib/python3.9/site-packages (from requests->transformers>=4.20.0->-r requirements.txt (line 5)) (2.0.4)
+Requirement already satisfied: idna<4,>=2.5 in ./.conda/lib/python3.9/site-packages (from requests->transformers>=4.20.0->-r requirements.txt (line 5)) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./.conda/lib/python3.9/site-packages (from requests->transformers>=4.20.0->-r requirements.txt (line 5)) (2.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./.conda/lib/python3.9/site-packages (from requests->transformers>=4.20.0->-r requirements.txt (line 5)) (2024.2.2)
+Requirement already satisfied: invoke>=2.0 in ./.conda/lib/python3.9/site-packages (from fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (2.2.0)
+Requirement already satisfied: paramiko>=2.4 in ./.conda/lib/python3.9/site-packages (from fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (3.4.0)
+Requirement already satisfied: decorator>=5 in ./.conda/lib/python3.9/site-packages (from fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (5.1.1)
+Requirement already satisfied: deprecated>=1.2 in ./.conda/lib/python3.9/site-packages (from fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (1.2.14)
+Requirement already satisfied: beautifulsoup4 in ./.conda/lib/python3.9/site-packages (from google->colossalai>=0.1.12->-r requirements.txt (line 1)) (4.12.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./.conda/lib/python3.9/site-packages (from pandas->datasets->-r requirements.txt (line 6)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./.conda/lib/python3.9/site-packages (from pandas->datasets->-r requirements.txt (line 6)) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in ./.conda/lib/python3.9/site-packages (from pandas->datasets->-r requirements.txt (line 6)) (2024.1)
+Requirement already satisfied: cfgv>=2.0.0 in ./.conda/lib/python3.9/site-packages (from pre-commit->colossalai>=0.1.12->-r requirements.txt (line 1)) (3.4.0)
+Requirement already satisfied: identify>=1.0.0 in ./.conda/lib/python3.9/site-packages (from pre-commit->colossalai>=0.1.12->-r requirements.txt (line 1)) (2.5.35)
+Requirement already satisfied: nodeenv>=0.11.1 in ./.conda/lib/python3.9/site-packages (from pre-commit->colossalai>=0.1.12->-r requirements.txt (line 1)) (1.8.0)
+Requirement already satisfied: virtualenv>=20.10.0 in ./.conda/lib/python3.9/site-packages (from pre-commit->colossalai>=0.1.12->-r requirements.txt (line 1)) (20.25.1)
+Requirement already satisfied: annotated-types>=0.4.0 in ./.conda/lib/python3.9/site-packages (from pydantic->colossalai>=0.1.12->-r requirements.txt (line 1)) (0.6.0)
+Requirement already satisfied: pydantic-core==2.16.3 in ./.conda/lib/python3.9/site-packages (from pydantic->colossalai>=0.1.12->-r requirements.txt (line 1)) (2.16.3)
+Requirement already satisfied: jsonschema in ./.conda/lib/python3.9/site-packages (from ray->colossalai>=0.1.12->-r requirements.txt (line 1)) (4.21.1)
+Requirement already satisfied: msgpack<2.0.0,>=1.0.0 in ./.conda/lib/python3.9/site-packages (from ray->colossalai>=0.1.12->-r requirements.txt (line 1)) (1.0.8)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.conda/lib/python3.9/site-packages (from rich->colossalai>=0.1.12->-r requirements.txt (line 1)) (3.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.conda/lib/python3.9/site-packages (from rich->colossalai>=0.1.12->-r requirements.txt (line 1)) (2.17.2)
+Requirement already satisfied: wrapt<2,>=1.10 in ./.conda/lib/python3.9/site-packages (from deprecated>=1.2->fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (1.16.0)
+Requirement already satisfied: mdurl~=0.1 in ./.conda/lib/python3.9/site-packages (from markdown-it-py>=2.2.0->rich->colossalai>=0.1.12->-r requirements.txt (line 1)) (0.1.2)
+Requirement already satisfied: setuptools in ./.conda/lib/python3.9/site-packages (from nodeenv>=0.11.1->pre-commit->colossalai>=0.1.12->-r requirements.txt (line 1)) (68.2.2)
+Requirement already satisfied: bcrypt>=3.2 in ./.conda/lib/python3.9/site-packages (from paramiko>=2.4->fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (4.1.2)
+Requirement already satisfied: cryptography>=3.3 in ./.conda/lib/python3.9/site-packages (from paramiko>=2.4->fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (42.0.5)
+Requirement already satisfied: pynacl>=1.5 in ./.conda/lib/python3.9/site-packages (from paramiko>=2.4->fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (1.5.0)
+Requirement already satisfied: six>=1.5 in ./.conda/lib/python3.9/site-packages (from python-dateutil>=2.8.2->pandas->datasets->-r requirements.txt (line 6)) (1.16.0)
+Requirement already satisfied: distlib<1,>=0.3.7 in ./.conda/lib/python3.9/site-packages (from virtualenv>=20.10.0->pre-commit->colossalai>=0.1.12->-r requirements.txt (line 1)) (0.3.8)
+Requirement already satisfied: platformdirs<5,>=3.9.1 in ./.conda/lib/python3.9/site-packages (from virtualenv>=20.10.0->pre-commit->colossalai>=0.1.12->-r requirements.txt (line 1)) (4.2.0)
+Requirement already satisfied: soupsieve>1.2 in ./.conda/lib/python3.9/site-packages (from beautifulsoup4->google->colossalai>=0.1.12->-r requirements.txt (line 1)) (2.5)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./.conda/lib/python3.9/site-packages (from jsonschema->ray->colossalai>=0.1.12->-r requirements.txt (line 1)) (2023.12.1)
+Requirement already satisfied: referencing>=0.28.4 in ./.conda/lib/python3.9/site-packages (from jsonschema->ray->colossalai>=0.1.12->-r requirements.txt (line 1)) (0.34.0)
+Requirement already satisfied: rpds-py>=0.7.1 in ./.conda/lib/python3.9/site-packages (from jsonschema->ray->colossalai>=0.1.12->-r requirements.txt (line 1)) (0.18.0)
+Requirement already satisfied: cffi>=1.12 in ./.conda/lib/python3.9/site-packages (from cryptography>=3.3->paramiko>=2.4->fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (1.16.0)
+Requirement already satisfied: pycparser in ./.conda/lib/python3.9/site-packages (from cffi>=1.12->cryptography>=3.3->paramiko>=2.4->fabric->colossalai>=0.1.12->-r requirements.txt (line 1)) (2.22)
++ MODEL=google/vit-base-patch16-224
++ OUTPUT_PATH=./output_model
++ PLUGIN=gemini
++ TP_SIZE=2
++ PP_SIZE=2
++ GPUNUM=4
++ BS=16
++ LR=2e-4
++ EPOCH=3
++ WEIGHT_DECAY=0.05
++ WARMUP_RATIO=0.3
++ colossalai run --nproc_per_node 4 --master_port 29505 vit_train_demo.py --model_name_or_path google/vit-base-patch16-224 --output_path ./output_model --plugin gemini --batch_size 16 --tp_size 2 --pp_size 2 --num_epoch 3 --learning_rate 2e-4 --weight_decay 0.05 --warmup_ratio 0.3
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/shardformer/layer/normalization.py:45: UserWarning: Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel
+  warnings.warn("Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel")
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/shardformer/layer/normalization.py:45: UserWarning: Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel
+  warnings.warn("Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel")
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/shardformer/layer/normalization.py:45: UserWarning: Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel
+  warnings.warn("Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel")
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/shardformer/layer/normalization.py:45: UserWarning: Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel
+  warnings.warn("Please install apex from source (https://github.com/NVIDIA/apex) to use the fused layernorm kernel")
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/initialize.py:48: UserWarning: `config` is deprecated and will be removed soon.
+  warnings.warn("`config` is deprecated and will be removed soon.")
+[04/07/24 16:39:13] INFO     colossalai - colossalai - INFO:                    
+                             /storage/user/ViT-Fine-Tuning-with-ColossalAI
+                             /.conda/lib/python3.9/site-packages/colossalai/init
+                             ialize.py:67 launch                                
+                    INFO     colossalai - colossalai - INFO: Distributed        
+                             environment is initialized, world size: 4          
+Some weights of ViTForImageClassification were not initialized from the model checkpoint at google/vit-base-patch16-224 and are newly initialized because the shapes did not match:
+- classifier.bias: found shape torch.Size([1000]) in the checkpoint and torch.Size([3]) in the model instantiated
+- classifier.weight: found shape torch.Size([1000, 768]) in the checkpoint and torch.Size([3, 768]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[04/07/24 16:40:01] INFO     colossalai - colossalai - INFO:                    
+                             /storage/user/ViT-Fine-Tuning-with-ColossalAI
+                             /vit_train_demo.py:171 main                        
+                    INFO     colossalai - colossalai - INFO: Finish loading     
+                             model from google/vit-base-patch16-224             
+                    INFO     colossalai - colossalai - INFO:                    
+                             /storage/user/ViT-Fine-Tuning-with-ColossalAI
+                             /vit_train_demo.py:199 main                        
+                    INFO     colossalai - colossalai - INFO: Set plugin as      
+                             gemini                                             
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/kernel/extensions/utils.py:96: UserWarning: [extension] The CUDA version on the system (11.0) does not match with the version (11.3) torch was compiled with. The mismatch is found in the minor version. As the APIs are compatible, we will allow compilation to proceed. If you encounter any issue when using the built kernel, please try to build it again with fully matched CUDA versions
+  warnings.warn(
+[extension] Compiling the JIT cpu_adam_x86 kernel during runtime now
+Some weights of ViTForImageClassification were not initialized from the model checkpoint at google/vit-base-patch16-224 and are newly initialized because the shapes did not match:
+- classifier.bias: found shape torch.Size([1000]) in the checkpoint and torch.Size([3]) in the model instantiated
+- classifier.weight: found shape torch.Size([1000, 768]) in the checkpoint and torch.Size([3, 768]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of ViTForImageClassification were not initialized from the model checkpoint at google/vit-base-patch16-224 and are newly initialized because the shapes did not match:
+- classifier.bias: found shape torch.Size([1000]) in the checkpoint and torch.Size([3]) in the model instantiated
+- classifier.weight: found shape torch.Size([1000, 768]) in the checkpoint and torch.Size([3, 768]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of ViTForImageClassification were not initialized from the model checkpoint at google/vit-base-patch16-224 and are newly initialized because the shapes did not match:
+- classifier.bias: found shape torch.Size([1000]) in the checkpoint and torch.Size([3]) in the model instantiated
+- classifier.weight: found shape torch.Size([1000, 768]) in the checkpoint and torch.Size([3, 768]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/kernel/extensions/utils.py:96: UserWarning: [extension] The CUDA version on the system (11.0) does not match with the version (11.3) torch was compiled with. The mismatch is found in the minor version. As the APIs are compatible, we will allow compilation to proceed. If you encounter any issue when using the built kernel, please try to build it again with fully matched CUDA versions
+  warnings.warn(
+[extension] Compiling the JIT cpu_adam_x86 kernel during runtime now
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/kernel/extensions/utils.py:96: UserWarning: [extension] The CUDA version on the system (11.0) does not match with the version (11.3) torch was compiled with. The mismatch is found in the minor version. As the APIs are compatible, we will allow compilation to proceed. If you encounter any issue when using the built kernel, please try to build it again with fully matched CUDA versions
+  warnings.warn(
+[extension] Compiling the JIT cpu_adam_x86 kernel during runtime now
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/kernel/extensions/utils.py:96: UserWarning: [extension] The CUDA version on the system (11.0) does not match with the version (11.3) torch was compiled with. The mismatch is found in the minor version. As the APIs are compatible, we will allow compilation to proceed. If you encounter any issue when using the built kernel, please try to build it again with fully matched CUDA versions
+  warnings.warn(
+[extension] Compiling the JIT cpu_adam_x86 kernel during runtime now
+[extension] Time taken to compile cpu_adam_x86 op: 27.344337463378906 seconds
+[extension] Time taken to compile cpu_adam_x86 op: 25.19769811630249 seconds
+[extension] Time taken to compile cpu_adam_x86 op: 25.374394416809082 seconds
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/colossalai/kernel/extensions/utils.py:96: UserWarning: [extension] The CUDA version on the system (11.0) does not match with the version (11.3) torch was compiled with. The mismatch is found in the minor version. As the APIs are compatible, we will allow compilation to proceed. If you encounter any issue when using the built kernel, please try to build it again with fully matched CUDA versions
+  warnings.warn(
+[extension] Compiling the JIT fused_optim_cuda kernel during runtime now
+[extension] Compiling the JIT fused_optim_cuda kernel during runtime now
+[extension] Compiling the JIT fused_optim_cuda kernel during runtime now
+[extension] Time taken to compile fused_optim_cuda op: 37.167145013809204 seconds
+[extension] Time taken to compile cpu_adam_x86 op: 62.95973229408264 seconds
+[extension] Time taken to compile fused_optim_cuda op: 37.181055307388306 seconds
+[extension] Time taken to compile fused_optim_cuda op: 37.19560694694519 seconds
+[extension] Compiling the JIT fused_optim_cuda kernel during runtime now
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx5-rdmav25.so': /usr/lib/libibverbs/libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx4-rdmav25.so': /usr/lib/libibverbs/libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx5-rdmav25.so': /usr/lib/libibverbs/libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx4-rdmav25.so': /usr/lib/libibverbs/libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx5-rdmav25.so': /usr/lib/libibverbs/libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx4-rdmav25.so': /usr/lib/libibverbs/libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+[extension] Time taken to compile fused_optim_cuda op: 37.44835567474365 seconds
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx5-rdmav25.so': /usr/lib/libibverbs/libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+libibverbs: Warning: couldn't load driver '/usr/lib/libibverbs/libmlx4-rdmav25.so': /usr/lib/libibverbs/libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+[04/07/24 16:41:46] INFO     colossalai - colossalai - INFO:                    
+                             /storage/user/ViT-Fine-Tuning-with-ColossalAI
+                             /vit_train_demo.py:230 main                        
+                    INFO     colossalai - colossalai - INFO: Start finetuning   
+
+Epoch [1]:   0%|          | 0/16 [00:00<?, ?it/s]
+Epoch [1]:   0%|          | 0/16 [00:02<?, ?it/s, loss=1.38]
+Epoch [1]:   6%|▋         | 1/16 [00:02<00:32,  2.18s/it, loss=1.38]
+Epoch [1]:   6%|▋         | 1/16 [00:02<00:32,  2.18s/it, loss=1.05]
+Epoch [1]:  12%|█▎        | 2/16 [00:02<00:14,  1.03s/it, loss=1.05]
+Epoch [1]:  12%|█▎        | 2/16 [00:02<00:14,  1.03s/it, loss=0.941]
+Epoch [1]:  19%|█▉        | 3/16 [00:02<00:08,  1.49it/s, loss=0.941]
+Epoch [1]:  19%|█▉        | 3/16 [00:02<00:08,  1.49it/s, loss=0.561]
+Epoch [1]:  25%|██▌       | 4/16 [00:02<00:05,  2.02it/s, loss=0.561]
+Epoch [1]:  25%|██▌       | 4/16 [00:03<00:05,  2.02it/s, loss=0.253]
+Epoch [1]:  31%|███▏      | 5/16 [00:03<00:04,  2.48it/s, loss=0.253]
+Epoch [1]:  31%|███▏      | 5/16 [00:03<00:04,  2.48it/s, loss=0.429]
+Epoch [1]:  38%|███▊      | 6/16 [00:03<00:03,  2.93it/s, loss=0.429]
+Epoch [1]:  38%|███▊      | 6/16 [00:03<00:03,  2.93it/s, loss=0.409]
+Epoch [1]:  44%|████▍     | 7/16 [00:03<00:02,  3.30it/s, loss=0.409]
+Epoch [1]:  44%|████▍     | 7/16 [00:03<00:02,  3.30it/s, loss=0.127]
+Epoch [1]:  50%|█████     | 8/16 [00:03<00:02,  3.58it/s, loss=0.127]
+Epoch [1]:  50%|█████     | 8/16 [00:04<00:02,  3.58it/s, loss=0.701]
+Epoch [1]:  56%|█████▋    | 9/16 [00:04<00:01,  3.80it/s, loss=0.701]
+Epoch [1]:  56%|█████▋    | 9/16 [00:04<00:01,  3.80it/s, loss=0.956]
+Epoch [1]:  62%|██████▎   | 10/16 [00:04<00:01,  3.90it/s, loss=0.956]
+Epoch [1]:  62%|██████▎   | 10/16 [00:04<00:01,  3.90it/s, loss=0.209]
+Epoch [1]:  69%|██████▉   | 11/16 [00:04<00:01,  4.05it/s, loss=0.209]
+Epoch [1]:  69%|██████▉   | 11/16 [00:04<00:01,  4.05it/s, loss=0.495]
+Epoch [1]:  75%|███████▌  | 12/16 [00:04<00:00,  4.19it/s, loss=0.495]
+Epoch [1]:  75%|███████▌  | 12/16 [00:04<00:00,  4.19it/s, loss=0.428]
+Epoch [1]:  81%|████████▏ | 13/16 [00:04<00:00,  4.30it/s, loss=0.428]/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:728: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+
+Epoch [1]:  81%|████████▏ | 13/16 [00:05<00:00,  4.30it/s, loss=0.0957]
+Epoch [1]:  88%|████████▊ | 14/16 [00:05<00:00,  4.37it/s, loss=0.0957]/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:728: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:728: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+/storage/user/ViT-Fine-Tuning-with-ColossalAI/.conda/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:728: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+
+Epoch [1]:  88%|████████▊ | 14/16 [00:05<00:00,  4.37it/s, loss=0.427] 
+Epoch [1]:  94%|█████████▍| 15/16 [00:05<00:00,  4.37it/s, loss=0.427]
+Epoch [1]:  94%|█████████▍| 15/16 [00:05<00:00,  4.37it/s, loss=0.101]
+Epoch [1]: 100%|██████████| 16/16 [00:05<00:00,  4.41it/s, loss=0.101]
+Epoch [1]: 100%|██████████| 16/16 [00:05<00:00,  2.86it/s, loss=0.101]
+Evaluation result for epoch 1:                 average_loss=1.2134,                 accuracy=0.8828.
+
+Epoch [2]:   0%|          | 0/16 [00:00<?, ?it/s]
+Epoch [2]:   0%|          | 0/16 [00:00<?, ?it/s, loss=0.734]
+Epoch [2]:   6%|▋         | 1/16 [00:00<00:03,  4.70it/s, loss=0.734]
+Epoch [2]:   6%|▋         | 1/16 [00:00<00:03,  4.70it/s, loss=0.219]
+Epoch [2]:  12%|█▎        | 2/16 [00:00<00:03,  4.60it/s, loss=0.219]
+Epoch [2]:  12%|█▎        | 2/16 [00:00<00:03,  4.60it/s, loss=0.836]
+Epoch [2]:  19%|█▉        | 3/16 [00:00<00:02,  4.40it/s, loss=0.836]
+Epoch [2]:  19%|█▉        | 3/16 [00:00<00:02,  4.40it/s, loss=0.0452]
+Epoch [2]:  25%|██▌       | 4/16 [00:00<00:02,  4.46it/s, loss=0.0452]
+Epoch [2]:  25%|██▌       | 4/16 [00:01<00:02,  4.46it/s, loss=0.15]  
+Epoch [2]:  31%|███▏      | 5/16 [00:01<00:02,  4.36it/s, loss=0.15]
+Epoch [2]:  31%|███▏      | 5/16 [00:01<00:02,  4.36it/s, loss=0.406]
+Epoch [2]:  38%|███▊      | 6/16 [00:01<00:02,  4.23it/s, loss=0.406]
+Epoch [2]:  38%|███▊      | 6/16 [00:01<00:02,  4.23it/s, loss=0.0797]
+Epoch [2]:  44%|████▍     | 7/16 [00:01<00:02,  4.13it/s, loss=0.0797]
+Epoch [2]:  44%|████▍     | 7/16 [00:01<00:02,  4.13it/s, loss=0.031] 
+Epoch [2]:  50%|█████     | 8/16 [00:01<00:01,  4.15it/s, loss=0.031]
+Epoch [2]:  50%|█████     | 8/16 [00:02<00:01,  4.15it/s, loss=0.453]
+Epoch [2]:  56%|█████▋    | 9/16 [00:02<00:01,  4.17it/s, loss=0.453]
+Epoch [2]:  56%|█████▋    | 9/16 [00:02<00:01,  4.17it/s, loss=0.13] 
+Epoch [2]:  62%|██████▎   | 10/16 [00:02<00:01,  4.20it/s, loss=0.13]
+Epoch [2]:  62%|██████▎   | 10/16 [00:02<00:01,  4.20it/s, loss=0.0635]
+Epoch [2]:  69%|██████▉   | 11/16 [00:02<00:01,  4.12it/s, loss=0.0635]
+Epoch [2]:  69%|██████▉   | 11/16 [00:02<00:01,  4.12it/s, loss=0.0607]
+Epoch [2]:  75%|███████▌  | 12/16 [00:02<00:00,  4.13it/s, loss=0.0607]
+Epoch [2]:  75%|███████▌  | 12/16 [00:03<00:00,  4.13it/s, loss=0.037] 
+Epoch [2]:  81%|████████▏ | 13/16 [00:03<00:00,  4.19it/s, loss=0.037]
+Epoch [2]:  81%|████████▏ | 13/16 [00:03<00:00,  4.19it/s, loss=0.222]
+Epoch [2]:  88%|████████▊ | 14/16 [00:03<00:00,  4.17it/s, loss=0.222]
+Epoch [2]:  88%|████████▊ | 14/16 [00:03<00:00,  4.17it/s, loss=0.0448]
+Epoch [2]:  94%|█████████▍| 15/16 [00:03<00:00,  4.21it/s, loss=0.0448]
+Epoch [2]:  94%|█████████▍| 15/16 [00:03<00:00,  4.21it/s, loss=0.00542]
+Epoch [2]: 100%|██████████| 16/16 [00:03<00:00,  4.00it/s, loss=0.00542]
+Epoch [2]: 100%|██████████| 16/16 [00:03<00:00,  4.18it/s, loss=0.00542]
+Evaluation result for epoch 2:                 average_loss=0.3782,                 accuracy=0.9844.
+
+Epoch [3]:   0%|          | 0/16 [00:00<?, ?it/s]
+Epoch [3]:   0%|          | 0/16 [00:00<?, ?it/s, loss=0.0232]
+Epoch [3]:   6%|▋         | 1/16 [00:00<00:03,  4.44it/s, loss=0.0232]
+Epoch [3]:   6%|▋         | 1/16 [00:00<00:03,  4.44it/s, loss=0.0213]
+Epoch [3]:  12%|█▎        | 2/16 [00:00<00:03,  4.39it/s, loss=0.0213]
+Epoch [3]:  12%|█▎        | 2/16 [00:00<00:03,  4.39it/s, loss=0.0376]
+Epoch [3]:  19%|█▉        | 3/16 [00:00<00:03,  4.27it/s, loss=0.0376]
+Epoch [3]:  19%|█▉        | 3/16 [00:00<00:03,  4.27it/s, loss=0.00935]
+Epoch [3]:  25%|██▌       | 4/16 [00:00<00:02,  4.20it/s, loss=0.00935]
+Epoch [3]:  25%|██▌       | 4/16 [00:01<00:02,  4.20it/s, loss=0.015]  
+Epoch [3]:  31%|███▏      | 5/16 [00:01<00:02,  4.24it/s, loss=0.015]
+Epoch [3]:  31%|███▏      | 5/16 [00:01<00:02,  4.24it/s, loss=0.0479]
+Epoch [3]:  38%|███▊      | 6/16 [00:01<00:02,  4.28it/s, loss=0.0479]
+Epoch [3]:  38%|███▊      | 6/16 [00:01<00:02,  4.28it/s, loss=0.0059]
+Epoch [3]:  44%|████▍     | 7/16 [00:01<00:02,  4.31it/s, loss=0.0059]
+Epoch [3]:  44%|████▍     | 7/16 [00:01<00:02,  4.31it/s, loss=0.122] 
+Epoch [3]:  50%|█████     | 8/16 [00:01<00:01,  4.29it/s, loss=0.122]
+Epoch [3]:  50%|█████     | 8/16 [00:02<00:01,  4.29it/s, loss=0.0543]
+Epoch [3]:  56%|█████▋    | 9/16 [00:02<00:01,  4.16it/s, loss=0.0543]
+Epoch [3]:  56%|█████▋    | 9/16 [00:02<00:01,  4.16it/s, loss=0.0253]
+Epoch [3]:  62%|██████▎   | 10/16 [00:02<00:01,  4.17it/s, loss=0.0253]
+Epoch [3]:  62%|██████▎   | 10/16 [00:02<00:01,  4.17it/s, loss=0.0137]
+Epoch [3]:  69%|██████▉   | 11/16 [00:02<00:01,  4.17it/s, loss=0.0137]
+Epoch [3]:  69%|██████▉   | 11/16 [00:02<00:01,  4.17it/s, loss=0.185] 
+Epoch [3]:  75%|███████▌  | 12/16 [00:02<00:00,  4.15it/s, loss=0.185]
+Epoch [3]:  75%|███████▌  | 12/16 [00:03<00:00,  4.15it/s, loss=0.0203]
+Epoch [3]:  81%|████████▏ | 13/16 [00:03<00:00,  4.24it/s, loss=0.0203]
+Epoch [3]:  81%|████████▏ | 13/16 [00:03<00:00,  4.24it/s, loss=0.0107]
+Epoch [3]:  88%|████████▊ | 14/16 [00:03<00:00,  4.31it/s, loss=0.0107]
+Epoch [3]:  88%|████████▊ | 14/16 [00:03<00:00,  4.31it/s, loss=0.0117]
+Epoch [3]:  94%|█████████▍| 15/16 [00:03<00:00,  4.36it/s, loss=0.0117]
+Epoch [3]:  94%|█████████▍| 15/16 [00:03<00:00,  4.36it/s, loss=0.00401]
+Epoch [3]: 100%|██████████| 16/16 [00:03<00:00,  4.37it/s, loss=0.00401]
+Epoch [3]: 100%|██████████| 16/16 [00:03<00:00,  4.28it/s, loss=0.00401]
+Evaluation result for epoch 3:                 average_loss=0.3759,                 accuracy=0.9688.
+[04/07/24 16:42:00] INFO     colossalai - colossalai - INFO:                    
+                             /storage/user/ViT-Fine-Tuning-with-ColossalAI
+                             /vit_train_demo.py:234 main                        
+                    INFO     colossalai - colossalai - INFO: Finish finetuning  
+[04/07/24 16:42:01] INFO     colossalai - colossalai - INFO:                    
+                             /storage/user/ViT-Fine-Tuning-with-ColossalAI
+                             /vit_train_demo.py:238 main                        
+                    INFO     colossalai - colossalai - INFO: Saving model       
+                             checkpoint to ./output_model                       
+
+====== Training on All Nodes =====
+127.0.0.1: success
+
+====== Stopping All Nodes =====
+127.0.0.1: finish
